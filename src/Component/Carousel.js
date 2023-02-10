@@ -1,20 +1,45 @@
 import React from 'react'
-import Carousel from 'react-material-ui-carousel'
+import Carousel from 'react-multi-carousel';
+import "react-multi-carousel/lib/styles.css";
 import Box from '@mui/material/Box';
-import { Card, Avatar, Grid, Typography, Stack, IconButton, Divider } from '@mui/material';
-import { LocationOn, Edit, Star } from '@mui/icons-material';
+import { Card, Avatar,  Typography, Stack, IconButton, Divider } from '@mui/material';
+import { LocationOn, Star } from '@mui/icons-material';
 import { grey } from '@mui/material/colors';
 
 
 function Cardcarousel() {
-
+    const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 4000, min: 3000 },
+          items: 5
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 3
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 2
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1
+        }
+      };
     return (
 
-        <Carousel
-        additionalTransfrom={0}
+        <Stack 
+         display={'flex'}
+         justifyContent="center"
+         p={5}
+         >
+         <Carousel 
+         responsive={responsive}
+        additionalTransfrom={2}
         arrows
         autoPlay
-        autoPlaySpeed={2000}
+        autoPlaySpeed={3000}
         centerMode={false}
         className=""
         containerClass="container-with-dots"
@@ -22,39 +47,13 @@ function Cardcarousel() {
         draggable
         focusOnSelect={false}
         infinite
-        itemClass="3"
+        itemClass=""
         keyBoardControl
         minimumTouchDrag={80}
         pauseOnHover
         renderArrowsWhenDisabled={false}
         renderButtonGroupOutside={false}
         renderDotsOutside={false}
-        responsive={{
-          desktop: {
-            breakpoint: {
-              max: 3000,
-              min: 1024
-            },
-             items: 3,
-            // partialVisibilityGutter: 40
-          },
-          mobile: {
-            breakpoint: {
-              max: 464,
-              min: 0
-            },
-            items: 1,
-            // partialVisibilityGutter: 30
-          },
-          tablet: {
-            breakpoint: {
-              max: 1024,
-              min: 464
-            },
-            items: 2,
-            // partialVisibilityGutter: 30
-          }
-        }}
         rewind={false}
         rewindWithAnimation={false}
         rtl={false}
@@ -64,10 +63,12 @@ function Cardcarousel() {
         slidesToSlide={1}
         swipeable
       >
+                       
+                    
+                       
 
-
-                           <Stack direction={'row'} spacing={2.5} justifyContent='center' sx={{mt:2}}>
-                         
+                       
+                           <Stack >
                             <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px"}}>
 
                                 <Box>
@@ -103,10 +104,13 @@ function Cardcarousel() {
                                
 
                             </Card>
+                            </Stack>
 
+                           <div>
                             <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px" }}>
 
                                 <Box>
+                                    
                                     <Stack direction={'row'} py={2} sx={{ alignItems:'flex-start'  }}>
                                
                                         <Avatar  sx={{mx:2,width:'40px', heigth:'40px'}} >
@@ -138,7 +142,8 @@ function Cardcarousel() {
                                 <Divider orientation='horizontal'/>
                                
                             </Card>
-
+                            </div>
+                            <div>
                             <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px" }}>
 
                                 <Box>
@@ -172,9 +177,80 @@ function Cardcarousel() {
 
                                 <Divider orientation='horizontal'/>
                             </Card>
-                            </Stack>
+                            </div>
+                            <div>
+                            <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px" }}>
 
-                           <Stack direction={'row'} spacing={2.5} justifyContent='center' sx={{mt:2}}>
+                                <Box>
+                                    <Stack direction={'row'} py={2} sx={{ alignItems:'flex-start'  }}>
+                               
+                                        <Avatar  sx={{mx:2,width:'40px', heigth:'40px'}} >
+                                            <img width={50}
+                                            src={"https://rozgarpatrika.com/wp-content/uploads/2019/06/madras-university-logo.png"}
+                                            />
+                                        </Avatar>
+                                        <Stack spacing={1} justifyContent="center" width={250} >
+                                            <Typography variant="body1" fontWeight={'bold'}>
+                                            Madras University
+                                            </Typography>
+                                            <Typography variant='subtitle2' sx={{mt:-2}} gutterBottom >
+                                                <LocationOn 
+                                                fontSize='3px'
+                                                sx={{ color: grey[400]}} />
+                                                 Chennai, TamilNadu
+                                            </Typography>
+
+                                        </Stack>
+                                       
+                                        <IconButton sx={{ mt:-2, ml:5  }} >
+                                            <Typography color="black" variant="caption" > Featured </Typography>
+                                            <Star sx={{ color:"goldenrod" }} fontSize="small" />
+                                        </IconButton>
+
+                                    </Stack>
+                                </Box>
+
+                                <Divider orientation='horizontal'/>
+                            </Card>
+                            </div>
+                            <div>
+                            <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px" }}>
+
+                                <Box>
+                                    <Stack direction={'row'} py={2} sx={{ alignItems:'flex-start'  }}>
+                               
+                                        <Avatar  sx={{mx:2,width:'40px', heigth:'40px'}} >
+                                            <img width={50}
+                                            src={"https://rozgarpatrika.com/wp-content/uploads/2019/06/madras-university-logo.png"}
+                                            />
+                                        </Avatar>
+                                        <Stack spacing={1} justifyContent="center" width={250} >
+                                            <Typography variant="body1" fontWeight={'bold'}>
+                                            Madras University
+                                            </Typography>
+                                            <Typography variant='subtitle2' sx={{mt:-2}} gutterBottom >
+                                                <LocationOn 
+                                                fontSize='3px'
+                                                sx={{ color: grey[400]}} />
+                                                 Chennai, TamilNadu
+                                            </Typography>
+
+                                        </Stack>
+                                       
+                                        <IconButton sx={{ mt:-2, ml:5  }} >
+                                            <Typography color="black" variant="caption" > Featured </Typography>
+                                            <Star sx={{ color:"goldenrod" }} fontSize="small" />
+                                        </IconButton>
+
+                                    </Stack>
+                                </Box>
+
+                                <Divider orientation='horizontal'/>
+                            </Card>
+                            </div>
+                          
+
+                           {/* <Stack direction={'row'} spacing={2.5} justifyContent='center' sx={{mt:2}}>
                          
                             <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px"}}>
 
@@ -280,7 +356,7 @@ function Cardcarousel() {
 
                                 <Divider orientation='horizontal'/>
                             </Card>
-                            </Stack>
+                            </Stack> */}
 
                         {/* </Grid> */}
 
@@ -289,6 +365,9 @@ function Cardcarousel() {
         </Grid> */}
 
     </Carousel>
+        </Stack>
+
+       
     )
 }
 

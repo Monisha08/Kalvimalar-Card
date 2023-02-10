@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import DownloadIcon from '@mui/icons-material/Download';
+import Cardcarousel from './Carousel';
 // import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 // import Checkbox from '@mui/material/Checkbox';
 // import Menu from '@mui/material/Menu';
@@ -34,10 +35,14 @@ function Cards() {
 
   return (
     <>
+ 
+    
+    {/* <Box sx={{ display:{xs:"none",md:"flex" , lg:"flex"} }} >
+      <Cardcarousel />
+    </Box> */}
 
-
-
-      <Stack
+     
+    <Stack
         display={{ xl: "flex", lg: "flex",md:"flex",sm:"flex", xs: "none" }}
         justifyContent="center"
         alignItems="center"
@@ -46,10 +51,9 @@ function Cards() {
           height: "100%",
           width: "100%",
         }}
+        p={5}
       >
-
-
-        <Grid maxWidth={{ xl: "xl", lg: "lg", md: "md", sm: "sm", xs: "none" }} container spacing={{ xl: 4, lg: 4, md: 3, sm: 2, xs: 1 }} p={5} sx={{ justifyContent: "normal", alignItems: "center" }} >
+       <Grid maxWidth={{ xl: "xl", lg: "lg", md: "md", sm: "sm", xs: "none" }} container spacing={{ xl: 4, lg: 3, md: 3, sm: 2, xs: 1 }}  sx={{ justifyContent: "normal", alignItems: "center" }} >
           {Colleges.map((e) => {
             return (
               <>
@@ -85,12 +89,6 @@ function Cards() {
                         height='295'
                         image={e.image}
                       />
-                      {/* <img
-                      src={e.image}
-                      alt='img'
-                      sizes='stretch'
-                    /> */}
-
 
                       <ImageListItemBar className="imgbar"
 
@@ -198,16 +196,14 @@ function Cards() {
               </>
             )
           })}
-
-
-
         </Grid>
 
       </Stack>
+   
 
       {/* --------------------------Mobile--------------------------------- */}
 
-      <Stack
+      {/* <Stack
         display={{ xl: "none", lg: "none", md: "none", sm: "none" , xs: "flex" }}
         sx={{
           backgroundColor: "#E5F3F0",
@@ -365,7 +361,8 @@ function Cards() {
 
 
         </Grid>
-      </Stack>
+      </Stack> */}
+
     </>
   )
 }

@@ -1,27 +1,45 @@
 
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
 .box-hover{
   position: absolute;
-  transition: all 0.7s cubic-bezier(0.48, 0, 0.745, 0.715);
+  display: none;
+  transition: all 1.3s cubic-bezier(0.48, 0, 0.745, 0.715);
   transition: 2s;
-  
+  height: auto;
+}
+
+.imgbar{
+  height: 60px ;
+  transition: all 2s cubic-bezier(0.095, 0.72, 0.185, 1);
+}
+.imgbar:hover{
+  height: 185px;
+}
+
+.main-card:hover .imgbar{
+  height: 185px;
 }
 
 .main-card:hover .box-hover{
   position: relative;
   display: block;
-  transform: translateY(2);
+  transform: translateY(3);
  
 }
 
 .main-card{
   background-color: "#B5F5E7";
-  transition: 2s;
+  transition: all 3s cubic-bezier(0.065, 0.82, 0.165, 1);
 
 }
 
 .main-card:hover {
-  transform: scale(1.03);
-  z-index: 1;
+  transform: scale3d(1.02);
+  z-index: 3;
   box-shadow: "2px 2px 10px 10px grey";
 }
 
