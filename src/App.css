@@ -2,13 +2,14 @@
 .box-hover{
   position: absolute;
   transition: all 0.7s cubic-bezier(0.48, 0, 0.745, 0.715);
+  transition: 2s;
   
 }
 
 .main-card:hover .box-hover{
   position: relative;
   display: block;
-  transition: 0.7s;
+  transform: translateY(2);
  
 }
 

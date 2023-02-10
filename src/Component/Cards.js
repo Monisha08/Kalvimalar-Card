@@ -24,12 +24,9 @@ var buttonStyle = {
   padding: '2',
   width: '150px',
   bgcolor: '#0db995',
-
   '&:hover': {
-    bgcolor: '#0db997',
+    bgcolor: '#0db995',
   }
-
-
 }
 
 function Cards() {
@@ -46,7 +43,9 @@ function Cards() {
       alignItems: "center" 
       }}>
 
-
+    <Stack 
+    display={{ xl:"flex", md:"flex" , xs:"none" }}
+     >
 
       <Grid maxWidth={'xl'} container display={'flex'} spacing={{ xl:4, lg:3, md:3, xs:1 }} p={5} justifyContent="center">
 
@@ -203,6 +202,168 @@ function Cards() {
 
       </Grid>
 
+    </Stack>
+    {/* --------------------------Mobile--------------------------------- */}
+    <Stack
+    display={{ xl:"none", md:"none" , xs:"flex" }}
+     >
+
+      <Grid maxWidth={'xs'} container display={'flex'} spacing={{ xs:1 }} p={2} justifyContent="center">
+
+        {Colleges.map((e) => {
+          return (
+            <>
+              <Grid item  xs={12}  >
+                <Card className='main-card' sx={{ bgcolor: "#B5F5E7" , height:"350px", width: "351px" }}>
+                  <ImageListItem sx={{ width: "351px"   }} >
+
+                    <ImageListItemBar
+                      sx={{
+                        background:'none'
+                      }}
+                      actionIcon={
+                        <Avatar sx={{ position:"absolute", width: 60, height: 60 , m:"0px 0px 0px 10px",  }}>
+                          <img src={e.logo} alt='' width={60} />
+                        </Avatar>
+
+                      }
+                      
+                      title={
+                        <>
+                        <Box className="gold-rating" sx={{ position:"absolute",height:75 , width:80 , ml:33, mt:-3, justifyContent:"center" , pt:2 , p:1, pl:2, borderRadius:" 0px 0px 0px 10px "}}>
+                        <Typography variant="body1" color="common.white" pt={2} >Rating</Typography>
+                        <Typography variant="h6" color="common.goldrod" fontWeight={'bold'} >{e.rate}/10</Typography>
+                        </Box>
+                        </>
+                      }
+                      actionPosition='left'
+                      position='top'
+                    />
+
+                    <CardMedia
+                    component={'img'}
+                    height='295'
+                    image={e.image}
+                    />
+                    {/* <img
+                      src={e.image}
+                      alt='img'
+                      sizes='stretch'
+                    /> */}
+
+
+                    <ImageListItemBar className="imgbar"
+
+
+                      title={
+                        <Typography variant='h6' >{e.name}</Typography>
+                      }
+
+                      subtitle={
+                        <>
+                          <Typography fontSize={13} >{e.address.district},{e.address.state}</Typography>
+
+                          <Box className="box-hover" sx={{ display: { xs: "block", sm: "block", md: "none" } }}>
+
+                            <Grid  >
+                              <Typography variant="caption">{e.course}</Typography>
+                            </Grid>
+
+                            <Grid item display={'flex'} sx={{ pt: 1 }}>
+
+                              <Grid sx={{ pr: '10px', textAlign: 'left' }}  >
+
+                                <Button variant='text' size='small' sx={{ fontSize: '13px', color: 'white' }} >
+                                  <SchoolOutlinedIcon sx={{  color: '#0db995', fontSize: '20px', pr: 1 }} />
+                                  
+                                  Admission
+                                </Button>
+                              </Grid>
+
+                              <Grid sx={{ pr: '10px', ml: '47px' }}>
+                                <Button variant='text' size='small' sx={{ fontSize: '13px', color: 'white' }}>
+                                  <MenuBookOutlinedIcon sx={{ color: '#0db995', fontSize: '20px', mr: '3px' }} />Course&fees
+                                </Button>
+
+
+                              </Grid>
+
+
+
+
+
+                            </Grid>
+
+
+
+
+
+                          </Box>
+
+
+                        </>
+
+                      }
+
+                    />
+
+
+                  </ImageListItem>
+
+                  <CardActions className='action-hover'>
+
+                    <Box >
+                      <Stack
+                        direction={'row'}
+                        spacing={2}
+                        justifyContent="center"
+                        mx={1}
+                      >
+
+                        <Button variant="contained"
+                          //  color= "#0db995 "
+                          sx={buttonStyle}
+                          size="medium"
+                        ><ArrowForwardIcon sx={{ mr: 1 }} />
+                          Apply
+
+                        </Button>
+
+                        <Button variant="contained"
+                          // color=  "#0db995 "
+
+                          sx={buttonStyle}
+                          size="medium"
+                        ><DownloadIcon sx={{ mr: 1 }} />
+                          Brochure
+
+                        </Button>
+
+                      </Stack>
+
+
+                    </Box>
+
+
+
+
+                  </CardActions>
+
+
+                </Card>
+
+
+              </Grid>
+
+            </>
+          )
+        })}
+
+
+
+      </Grid>
+
+    </Stack>
 
     </Stack>
 
