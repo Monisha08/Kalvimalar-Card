@@ -5,17 +5,18 @@ import Sample from './Component/Sample';
 import Practcards from './Component/Practcards';
 import Collegelisting from './Component/Collegelisting';
 import Cardshover from './Component/Cardshover';
-
+import Carousel from './Component/Carousel';
 
 
 function App() {
   return (
     
-    <Cards/>
+    // <Cards/>
     // <Sample/>
     // <Practcards/>
     // <Collegelisting/>
     // <Cardshover/>
+    <Carousel/>
     
       
     
