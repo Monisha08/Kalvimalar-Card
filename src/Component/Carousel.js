@@ -1,373 +1,81 @@
 import React from 'react'
+import Featuredclg from './Featuredclg';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
-import Box from '@mui/material/Box';
-import { Card, Avatar,  Typography, Stack, IconButton, Divider } from '@mui/material';
-import { LocationOn, Star } from '@mui/icons-material';
-import { grey } from '@mui/material/colors';
-
+import { Stack } from '@mui/material';
+import '../App.css';
+import { FormatAlignJustify } from '@mui/icons-material';
+import { alignProperty } from '@mui/material/styles/cssUtils';
 
 function Cardcarousel() {
     const responsive = {
         superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 5
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5
         },
         desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 3
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3
+            
         },
         tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 2
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
+          
         },
         mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 1
+            breakpoint: { max: 464, min: 0 },
+            items: 1
         }
-      };
+    };
+
+    const featuredmap =   Colleges.map((i)=> <Featuredclg 
+    name={i.name} 
+    district={i.address.district} 
+    state={i.address.state} 
+    logo={i.logo}/>)
+
     return (
 
-        <Stack 
-         display={'flex'}
-         justifyContent="center"
-         p={5}
-         >
-         <Carousel 
-         responsive={responsive}
-        additionalTransfrom={2}
-        arrows
-        autoPlay
-        autoPlaySpeed={3000}
-        centerMode={false}
-        className=""
-        containerClass="container-with-dots"
-        dotListClass=""
-        draggable
-        focusOnSelect={false}
-        infinite
-        itemClass=""
-        keyBoardControl
-        minimumTouchDrag={80}
-        pauseOnHover
-        renderArrowsWhenDisabled={false}
-        renderButtonGroupOutside={false}
-        renderDotsOutside={false}
-        rewind={false}
-        rewindWithAnimation={false}
-        rtl={false}
-        shouldResetAutoplay
-        showDots={false}
-        sliderClass=""
-        slidesToSlide={1}
-        swipeable
-      >
-                       
-                    
-                       
+        <Stack
+            display={'flex'}
+            justifyContent={'center'}
+            height='150px'
+            width='100%'
+           
+        >
+            <Carousel
+                responsive={responsive}
+                additionalTransfrom={2}
+                arrows={false}
+                autoPlay
+                autoPlaySpeed={5000}
+                centerMode={false}
+                draggable
+                infinite
+                itemClass=''
+                keyBoardControl={true}
+                minimumTouchDrag={80}
+                pauseOnHover
+                // renderArrowsWhenDisabled={false}
+                // renderButtonGroupOutside={false}
+                renderDotsOutside={false}
+                rewind={false}
+                rewindWithAnimation={false}
+                rtl={false}
+                shouldResetAutoplay
+                showDots={false}
+                sliderClass=""
+                slidesToSlide={2}
+                swipeable
+                className='carousel'
 
-                       
-                           <Stack >
-                            <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px"}}>
+            >
+                {featuredmap}
 
-                                <Box>
-                                    <Stack direction={'row'} py={2} sx={{ alignItems:'flex-start'  }}>
-                               
-                                        <Avatar  sx={{mx:2,width:'40px', heigth:'40px'}} >
-                                            <img width={50}
-                                            src={"https://www.thenewsminute.com/sites/default/files/Anna_university_Wikicommons_Sivahari_1200-compressed.jpg"}
-                                            />
-                                        </Avatar>
-                                        <Stack spacing={1} justifyContent="center" width={250} >
-                                            <Typography variant="body1" fontWeight={'bold'}>
-                                            Jeppiaar Engineering College
-                                            </Typography>
-                                            <Typography variant='subtitle2' sx={{mt:-2}} gutterBottom >
-                                                <LocationOn 
-                                                fontSize='3px'
-                                                sx={{ color: grey[400]}} />
-                                                 Chennai, TamilNadu
-                                            </Typography>
-
-                                        </Stack>
-                                       
-                                        <IconButton sx={{ mt:-2, ml:5  }} >
-                                            <Typography color="black" variant="caption" > Featured </Typography>
-                                            <Star sx={{ color:"goldenrod" }} fontSize="small" />
-                                        </IconButton>
-
-                                    </Stack>
-                                </Box>
-
-                                <Divider orientation='horizontal'/>
-                               
-
-                            </Card>
-                            </Stack>
-
-                           <div>
-                            <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px" }}>
-
-                                <Box>
-                                    
-                                    <Stack direction={'row'} py={2} sx={{ alignItems:'flex-start'  }}>
-                               
-                                        <Avatar  sx={{mx:2,width:'40px', heigth:'40px'}} >
-                                            <img width={50}
-                                            src={"https://static.kabaddiadda.com/images/playerImages/aiiu/7310_SRM_University.png"}
-                                            />
-                                        </Avatar>
-                                        <Stack spacing={1} justifyContent="center" width={250} >
-                                            <Typography variant="body1" fontWeight={'bold'}>
-                                            SRM University
-                                            </Typography>
-                                            <Typography variant='subtitle2' sx={{mt:-2}} gutterBottom >
-                                                <LocationOn 
-                                                fontSize='3px'
-                                                sx={{ color: grey[400]}} />
-                                                 Chennai, TamilNadu
-                                            </Typography>
-
-                                        </Stack>
-                                       
-                                        <IconButton sx={{ mt:-2, ml:5  }} >
-                                            <Typography color="black" variant="caption" > Featured </Typography>
-                                            <Star sx={{ color:"goldenrod" }} fontSize="small" />
-                                        </IconButton>
-
-                                    </Stack>
-                                </Box>
-
-                                <Divider orientation='horizontal'/>
-                               
-                            </Card>
-                            </div>
-                            <div>
-                            <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px" }}>
-
-                                <Box>
-                                    <Stack direction={'row'} py={2} sx={{ alignItems:'flex-start'  }}>
-                               
-                                        <Avatar  sx={{mx:2,width:'40px', heigth:'40px'}} >
-                                            <img width={50}
-                                            src={"https://rozgarpatrika.com/wp-content/uploads/2019/06/madras-university-logo.png"}
-                                            />
-                                        </Avatar>
-                                        <Stack spacing={1} justifyContent="center" width={250} >
-                                            <Typography variant="body1" fontWeight={'bold'}>
-                                            Madras University
-                                            </Typography>
-                                            <Typography variant='subtitle2' sx={{mt:-2}} gutterBottom >
-                                                <LocationOn 
-                                                fontSize='3px'
-                                                sx={{ color: grey[400]}} />
-                                                 Chennai, TamilNadu
-                                            </Typography>
-
-                                        </Stack>
-                                       
-                                        <IconButton sx={{ mt:-2, ml:5  }} >
-                                            <Typography color="black" variant="caption" > Featured </Typography>
-                                            <Star sx={{ color:"goldenrod" }} fontSize="small" />
-                                        </IconButton>
-
-                                    </Stack>
-                                </Box>
-
-                                <Divider orientation='horizontal'/>
-                            </Card>
-                            </div>
-                            <div>
-                            <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px" }}>
-
-                                <Box>
-                                    <Stack direction={'row'} py={2} sx={{ alignItems:'flex-start'  }}>
-                               
-                                        <Avatar  sx={{mx:2,width:'40px', heigth:'40px'}} >
-                                            <img width={50}
-                                            src={"https://rozgarpatrika.com/wp-content/uploads/2019/06/madras-university-logo.png"}
-                                            />
-                                        </Avatar>
-                                        <Stack spacing={1} justifyContent="center" width={250} >
-                                            <Typography variant="body1" fontWeight={'bold'}>
-                                            Madras University
-                                            </Typography>
-                                            <Typography variant='subtitle2' sx={{mt:-2}} gutterBottom >
-                                                <LocationOn 
-                                                fontSize='3px'
-                                                sx={{ color: grey[400]}} />
-                                                 Chennai, TamilNadu
-                                            </Typography>
-
-                                        </Stack>
-                                       
-                                        <IconButton sx={{ mt:-2, ml:5  }} >
-                                            <Typography color="black" variant="caption" > Featured </Typography>
-                                            <Star sx={{ color:"goldenrod" }} fontSize="small" />
-                                        </IconButton>
-
-                                    </Stack>
-                                </Box>
-
-                                <Divider orientation='horizontal'/>
-                            </Card>
-                            </div>
-                            <div>
-                            <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px" }}>
-
-                                <Box>
-                                    <Stack direction={'row'} py={2} sx={{ alignItems:'flex-start'  }}>
-                               
-                                        <Avatar  sx={{mx:2,width:'40px', heigth:'40px'}} >
-                                            <img width={50}
-                                            src={"https://rozgarpatrika.com/wp-content/uploads/2019/06/madras-university-logo.png"}
-                                            />
-                                        </Avatar>
-                                        <Stack spacing={1} justifyContent="center" width={250} >
-                                            <Typography variant="body1" fontWeight={'bold'}>
-                                            Madras University
-                                            </Typography>
-                                            <Typography variant='subtitle2' sx={{mt:-2}} gutterBottom >
-                                                <LocationOn 
-                                                fontSize='3px'
-                                                sx={{ color: grey[400]}} />
-                                                 Chennai, TamilNadu
-                                            </Typography>
-
-                                        </Stack>
-                                       
-                                        <IconButton sx={{ mt:-2, ml:5  }} >
-                                            <Typography color="black" variant="caption" > Featured </Typography>
-                                            <Star sx={{ color:"goldenrod" }} fontSize="small" />
-                                        </IconButton>
-
-                                    </Stack>
-                                </Box>
-
-                                <Divider orientation='horizontal'/>
-                            </Card>
-                            </div>
-                          
-
-                           {/* <Stack direction={'row'} spacing={2.5} justifyContent='center' sx={{mt:2}}>
-                         
-                            <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px"}}>
-
-                                <Box>
-                                    <Stack direction={'row'} py={2} sx={{ alignItems:'flex-start'  }}>
-                               
-                                        <Avatar  sx={{mx:2,width:'40px', heigth:'40px'}} >
-                                            <img width={50}
-                                            src={"https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Stella_Maris_College_logo.png/220px-Stella_Maris_College_logo.png"}
-                                            />
-                                        </Avatar>
-                                        <Stack spacing={1} justifyContent="center" width={250} >
-                                            <Typography variant="body1" fontWeight={'bold'}>
-                                            Stella Maris College
-                                            </Typography>
-                                            <Typography variant='subtitle2' sx={{mt:-2}} gutterBottom >
-                                                <LocationOn 
-                                                fontSize='3px'
-                                                sx={{ color: grey[400]}} />
-                                                 Chennai, TamilNadu
-                                            </Typography>
-
-                                        </Stack>
-                                       
-                                        <IconButton sx={{ mt:-2, ml:5  }} >
-                                            <Typography color="black" variant="caption" > Featured </Typography>
-                                            <Star sx={{ color:"goldenrod" }} fontSize="small" />
-                                        </IconButton>
-
-                                    </Stack>
-                                </Box>
-
-                                <Divider orientation='horizontal'/>
-                                
-
-                            </Card>
-
-                            <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px" }}>
-
-                                <Box>
-                                    <Stack direction={'row'} py={2} sx={{ alignItems:'flex-start'  }}>
-                               
-                                        <Avatar  sx={{mx:2,width:'40px', heigth:'40px'}} >
-                                            <img width={50}
-                                            src={"https://storage.googleapis.com/ezap-prod/colleges/3870/ethiraj-college-for-women-chennai-logo.jpg"}
-                                            />
-                                        </Avatar>
-                                        <Stack spacing={1} justifyContent="center" width={250} >
-                                            <Typography variant="body1" fontWeight={'bold'}>
-                                           Ethiraj College for Women
-                                            </Typography>
-                                            <Typography variant='subtitle2' sx={{mt:-2}} gutterBottom >
-                                                <LocationOn 
-                                                fontSize='3px'
-                                                sx={{ color: grey[400]}} />
-                                                 Chennai, TamilNadu
-                                            </Typography>
-
-                                        </Stack>
-                                       
-                                        <IconButton sx={{ mt:-2, ml:5  }} >
-                                            <Typography color="black" variant="caption" > Featured </Typography>
-                                            <Star sx={{ color:"goldenrod" }} fontSize="small" />
-                                        </IconButton>
-
-                                    </Stack>
-                                </Box>
-
-                                <Divider orientation='horizontal'/>
-                               
-                            </Card>
-
-                            <Card sx={{ height: '120px', width: '450px', bgcolor:'#E1F8F3', borderRadius:"10px" }}>
-
-                                <Box>
-                                    <Stack direction={'row'} py={2} sx={{ alignItems:'flex-start'  }}>
-                               
-                                        <Avatar  sx={{mx:2,width:'40px', heigth:'40px'}} >
-                                            <img width={50}
-                                            src={"https://pbs.twimg.com/profile_images/1084012808872767495/JNEcPNSS_400x400.jpg"}
-                                            />
-                                        </Avatar>
-                                        <Stack spacing={1} justifyContent="center" width={250} >
-                                            <Typography variant="body1" fontWeight={'bold'}>
-                                           Sri Sairam Engineering College 
-                                            </Typography>
-                                            <Typography variant='subtitle2' sx={{mt:-2}} gutterBottom >
-                                                <LocationOn 
-                                                fontSize='3px'
-                                                sx={{ color: grey[400]}} />
-                                                 Chennai, TamilNadu
-                                            </Typography>
-
-                                        </Stack>
-                                       
-                                        <IconButton sx={{ mt:-2, ml:5  }} >
-                                            <Typography color="black" variant="caption" > Featured </Typography>
-                                            <Star sx={{ color:"goldenrod" }} fontSize="small" />
-                                        </IconButton>
-
-                                    </Stack>
-                                </Box>
-
-                                <Divider orientation='horizontal'/>
-                            </Card>
-                            </Stack> */}
-
-                        {/* </Grid> */}
-
-                {/* </>
-         
-        </Grid> */}
-
-    </Carousel>
-        </Stack>
-
-       
+            </Carousel>
+         </Stack>
     )
 }
 

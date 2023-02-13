@@ -1,12 +1,12 @@
 // import logo from './logo.svg';
 import './App.css';
-import { CardDesign } from './Component/CardDesign';
+// import { CardDesign } from './Component/CardDesign';
 // import Cards from './Component/Cards';
 // import Sample from './Component/Sample';
 // import Practcards from './Component/Practcards';
 // import Collegelisting from './Component/Collegelisting';
 // import Cardshover from './Component/Cardshover';
-// import Carousel from './Component/Carousel';
+import Carousel from './Component/Carousel';
 
 // -----------------------------------------------
 import { Paper, Switch } from '@mui/material';
@@ -46,9 +46,10 @@ function App() {
       <ThemeProvider theme={theme}  >
         <CssBaseline />
         <Paper>
-          <Switch checked={darkTheme} onChange={() => { setDarkTheme(!darkTheme) }} sx={{ position:"fixed"  , zIndex:5 }} />
-          <CardDesign theme={darkTheme} />
+          {/* <Switch checked={darkTheme} onChange={() => { setDarkTheme(!darkTheme) }} sx={{ position:"fixed"  , zIndex:5 }} />
+          <CardDesign theme={darkTheme} /> */}
           {/* <main >Hello </main> */}
+          <Carousel/>
         </Paper>
       </ThemeProvider>
     </>

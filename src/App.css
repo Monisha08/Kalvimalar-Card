@@ -1,11 +1,9 @@
-
-
-*{
+* {
   margin: 0%;
   padding: 0%;
 }
 
-.box-hover{
+.box-hover {
   position: absolute;
   display: none;
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -13,8 +11,8 @@
   height: auto;
 }
 
-.imgbar{
-  height: 80px ;
+.imgbar {
+  height: 80px;
   /* transition: all 1.3s cubic-bezier(0.075, 0.62, 0.165, 1); */
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 
@@ -22,23 +20,23 @@
 
 .main-card:hover .imgbar {
   height: 170px;
-  background-color:  rgba(255, 255, 255, 0.82);
+  background-color: rgba(255, 255, 255, 0.82);
   background-color: rgba(2, 27, 27, 0.82);
- 
+
 }
 
-.main-card:hover .box-hover{
+.main-card:hover .box-hover {
   position: relative;
   display: block;
   /* transform: translateY(1); */
- 
+
 }
 
-.main-card:hover .typo{
+.main-card:hover .typo {
   color: aqua;
 }
 
-.main-card{
+.main-card {
   color: black;
   background-color: "#B5F5E7";
 
@@ -50,8 +48,23 @@
   box-shadow: "2px 2px 10px 10px grey";
 }
 
-.gold-rating{
+.gold-rating {
 
-    background: radial-gradient(ellipse farthest-corner at right bottom, #f0d353 0%, #d99b1e 8%, #9f7928 30%, #997728 40%, transparent 80%),
-                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #916e1d 62.5%, #5d4a1f 100%);
+  background: radial-gradient(ellipse farthest-corner at right bottom, #f0d353 0%, #d99b1e 8%, #9f7928 30%, #997728 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #916e1d 62.5%, #5d4a1f 100%);
+}
+
+/* 
+.div-card {
+ 
+  align-items: center;
+  justify-items: center;
+ 
+} */
+.carousel{
+  height: 100%;
+}
+
+.carousel-cards:hover{
+  color: rgb(112, 239, 239);
 }
