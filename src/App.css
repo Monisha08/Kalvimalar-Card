@@ -54,17 +54,15 @@
     radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #916e1d 62.5%, #5d4a1f 100%);
 }
 
-/* 
-.div-card {
+
+/* .div-card {
  
-  align-items: center;
-  justify-items: center;
+  /* align-items: center;
+  justify-items: center; */
+  /* background-color: #f3ffff;
  
 } */
 .carousel{
   height: 100%;
 }
 
-.carousel-cards:hover{
-  color: rgb(112, 239, 239);
-}

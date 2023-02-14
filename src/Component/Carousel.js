@@ -39,8 +39,8 @@ function Cardcarousel() {
     return (
 
         <Stack
-            display={'flex'}
-            justifyContent={'center'}
+            // display={'flex'}
+            // justifyContent={'center'}
             height='150px'
             width='100%'
            

@@ -9,6 +9,7 @@ import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import DownloadIcon from '@mui/icons-material/Download';
 import Cardcarousel from './Carousel';
+
 // import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 // import Checkbox from '@mui/material/Checkbox';
 // import Menu from '@mui/material/Menu';
@@ -75,7 +76,7 @@ function Cards() {
                         title={
                           <>
                             <Box className="gold-rating" sx={{ position: "absolute", height: 75, width: 80, ml: 33, mt: -3, justifyContent: "center", pt: 2, p: 1, pl: 2, borderRadius: " 0px 0px 0px 10px " }}>
-                              <Typography variant="body1" color="common.white" pt={2} >Rating</Typography>
+                              <Typography variant="body1" color="common.white">Rating</Typography>
                               <Typography variant="h6" color="common.goldrod" fontWeight={'bold'} >{e.rate}/10</Typography>
                             </Box>
                           </>
